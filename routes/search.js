@@ -9,7 +9,7 @@ router.get('/:ticker', function(req, res, next) {
     ticker = req.params.ticker;
     console.log("\napi call\n");
     
-    fetch(`https://api.tiingo.com/tiingo/utilities/search?query=${ticker}&token=8bb5d357e4616c9938090e9e3de7acefc38d224b`)
+    fetch(`https://api.tiingo.com/tiingo/utilities/search?query=${ticker}&token=ab79e2f94d8d2281da9fed46e5eafac35d19807b`)
     .then(res => res.json())
     .then(data => processData(data))
     .then(data => res.send(data));

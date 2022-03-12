@@ -24,7 +24,7 @@ router.get('/search/:ticker', function(req, res, next) {
     ticker = req.params.ticker;
     // console.log("\napi call\n");
     
-    fetch(`https://api.tiingo.com/tiingo/utilities/search?query=${ticker}&token=8bb5d357e4616c9938090e9e3de7acefc38d224b`)
+    fetch(`https://api.tiingo.com/tiingo/utilities/search?query=${ticker}&token=ab79e2f94d8d2281da9fed46e5eafac35d19807b`)
     .then(res => res.json())
     .then(data => processData(data))
     .then(data => res.send(data));
@@ -39,7 +39,7 @@ router.get('/detail/:ticker', function(req, res, next) {
   ticker = req.params.ticker;
   // console.log("\nrequesting company details\n");
 
-  fetch(`https://api.tiingo.com/tiingo/daily/${ticker}?token=8bb5d357e4616c9938090e9e3de7acefc38d224b`)
+  fetch(`https://api.tiingo.com/tiingo/daily/${ticker}?token=ab79e2f94d8d2281da9fed46e5eafac35d19807b`)
   .then(res => res.json())
   .then(function(data) {
 
@@ -69,7 +69,7 @@ router.get('/price/:ticker', function(req, res, next) {
   ticker = req.params.ticker;
   // console.log("\nrequesting company price\n");
 
-  fetch(`https://api.tiingo.com/iex/?tickers=${ticker}&token=8bb5d357e4616c9938090e9e3de7acefc38d224b`)
+  fetch(`https://api.tiingo.com/iex/?tickers=${ticker}&token=ab79e2f94d8d2281da9fed46e5eafac35d19807b`)
   .then(res => res.json())
   .then(function(data) {
 
@@ -94,7 +94,7 @@ router.get('/chart/daily/:ticker/:startDate', function(req, res, next) {
   startDate = req.params.startDate;
   // console.log(`\nrequesting company daily chart for ${ticker} from ${startDate}\n`);
 
-  fetch(`https://api.tiingo.com/iex/${ticker}/prices?startDate=${startDate}&resampleFreq=4min&token=8bb5d357e4616c9938090e9e3de7acefc38d224b`)
+  fetch(`https://api.tiingo.com/iex/${ticker}/prices?startDate=${startDate}&resampleFreq=4min&token=ab79e2f94d8d2281da9fed46e5eafac35d19807b`)
   .then(res => res.json())
   .then(function(data) {
 
@@ -153,7 +153,7 @@ router.get('/chart/historical/:ticker', function(req, res, next) {
   // startDate = req.params.startDate;
   console.log(`\nrequesting company historical chart for ${ticker} from ${startDate}\n`);
 
-  fetch(`https://api.tiingo.com/tiingo/daily/${ticker}/prices?startDate=${startDate}&resampleFreq=daily&token=8bb5d357e4616c9938090e9e3de7acefc38d224b`)
+  fetch(`https://api.tiingo.com/tiingo/daily/${ticker}/prices?startDate=${startDate}&resampleFreq=daily&token=ab79e2f94d8d2281da9fed46e5eafac35d19807b`)
   .then(res => res.json())
   .then(function(data) {
 
