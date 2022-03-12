@@ -8,6 +8,7 @@
   "scripts": {
     "start": "node server.js",
     "devstart": "nodemon ./bin/www"
+	
   },
   "private": true,
   "dependencies": {
