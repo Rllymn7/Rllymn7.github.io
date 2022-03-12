@@ -6,7 +6,7 @@
     "node": ">=12.0.0"
   },
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node server.js",
     "devstart": "nodemon ./bin/www"
   },
   "private": true,
